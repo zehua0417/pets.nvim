@@ -1,12 +1,12 @@
 return {
-    next_actions = {
-        crouch = { "crouch" },
-        idle = { "idle" },
-        idle_blink = { "idle_blink" },
-        liedown = { "liedown" },
-        sit = { "sit" },
-        sneak = { "crouch" },
-        walk = { "walk" },
+next_actions = {
+        crouch = { "liedown", "sneak", "sit" },
+        idle = { "idle_blink", "walk", "sit" },
+        idle_blink = { "idle", "walk", "sit" },
+        liedown = { "sneak", "crouch" },
+        sit = { "idle", "idle_blink", "crouch", "liedown" },
+        sneak = { "crouch", "walk", "liedown" },
+        walk = { "idle", "idle_blink" },
     },
     idle_actions = { "idle", "liedown", "sit" },
     first_action = "idle",
